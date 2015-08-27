@@ -1,0 +1,9 @@
+{% extends 'index.html' %}
+
+{% block body %}
+<ul class='shortList'>
+    <li>Your shortened url is <a href={{urlroot}}{{shorturl}}>{{urlroot}}{{shorturl}}</a></li>
+    <li>It has been accessed {{number}} times</li>
+</ul>
+{% endblock %}
+

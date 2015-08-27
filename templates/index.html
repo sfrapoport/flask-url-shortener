@@ -1,0 +1,30 @@
+<!doctype html>
+
+<title>FLASK url shortener</title>
+
+<!-- TODO: Change interface for flashed_messages (using categories as here is hacky) -->
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class=flashes>
+        {% for message in messages %}
+        <li>{{ message }}</li> 
+        {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+
+<h1> Shorten your URL here:</h1>
+
+<form action={{url_for('shorten_url')}} method=post>
+    <dl>
+        <dd>URL:
+        <dd><input type=text name=fullurl>
+        <dd><input type=submit name=Shorten>
+    </dl>
+</form>
+
+{% block body %}{% endblock %}
+
+
+
+
